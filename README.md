@@ -14,3 +14,27 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# React CRUD Dashboard
+
+A simple React CRUD application built with functional components and hooks.
+
+## Features
+
+- User list
+- Add / Edit / Delete users
+- Search functionality
+- Modal based form
+- Loading & error handling
+
+## Tech Stack
+
+- React
+- Hooks
+- Vite
+- Material UI (optional)
+
+## Setup
+
+npm install  
+npm run dev
