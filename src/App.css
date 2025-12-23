@@ -1,10 +1,16 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0rem;
+  text-align: left;
+  width: 100%;
 }
-
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: left;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +45,18 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* ////headder styles */
+.header_sec {
+    background-color: #0d121c;
+    padding: 1rem;
+    color: white;
+    text-align: left;
+}
+.serach-section{
+  margin-bottom: 0rem;
+  display: flex ;
+  gap: 5rem;
+  align-items: baseline;
 }
