@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header>
         <div className='header_sec'>
-            <span>CRUD</span>
+            <span>REACT CRUD</span>
         </div>
     </header>
   );

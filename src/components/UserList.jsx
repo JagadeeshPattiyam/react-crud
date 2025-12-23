@@ -3,6 +3,7 @@ import { getUsers } from "../services/user-services";
 import UserTable from "./UserTable";
 import TextField from '@mui/material/TextField';
 import UserForm from "./UserForm";
+import Snackbar from '@mui/material/Snackbar';
 
 export default function UserList() {
 
@@ -11,17 +12,27 @@ export default function UserList() {
   const [loading, setLoading] = useState(true);
   //const [editingUser, setEditingUser] = useState(null);
   //const [editAction, seteditAction] = useState(false);
+ const [snackOpen, setSnackOpen] = useState(false);
+ const [snackMsg, setSnackMsg] = useState("");
+
+  const snackClose = () => {
+    setSnackOpen(false);
+  };
 
   const handleDelete = (id) => {
     const updatedUsers = users.filter(user => user.id !== id);
     setUsers(updatedUsers);
     setFilteredUsers(updatedUsers);
+    setSnackMsg("Removed user successfully");
+    setSnackOpen(true);
   };
 
   const addUserList = (user) => {
     const updatedUsers = [...users, user];
     setUsers(updatedUsers);
     setFilteredUsers(updatedUsers);
+    setSnackMsg("Added user successfully");
+    setSnackOpen(true);
   };
 
   const addUpdateList = (user) => {
@@ -31,6 +42,8 @@ export default function UserList() {
     );
     setUsers(updatedUsers);
     setFilteredUsers(updatedUsers);
+    setSnackMsg("Updated user successfully");
+    setSnackOpen(true);
   };
 
   const userFormRef = useRef();
@@ -91,6 +104,14 @@ export default function UserList() {
           onEdit={handleEdit}
         />
       )}
+
+        <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal:'center' }}
+        open={snackOpen}
+        onClose={snackClose}
+        message={snackMsg}
+        key={'top' + 'center'}
+        />
     </div>
   );
 }
